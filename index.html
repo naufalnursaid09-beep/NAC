@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="assets/monogram-nac.png">
+<title>Naraya Artha Consulting</title>
+<meta name="description" content="PT. Naraya Artha Consulting — konsultan pajak dan jasa akuntansi. Smart Tax Solutions for Growing Businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+html, body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Layout: navy company-profile pages stacked as bands, gold diagonal bars as the brand mark, one ivory band for the service list */
+:root {
+  --navy: #141e33;
+  --navy-2: #1b2842;
+  --navy-3: #24334f;
+  --gold: #d3a24a;
+  --gold-soft: #e6c27f;
+  --ivory: #f6f1e6;
+  --ink: #141e33;
+  --text: #e9edf5;
+  --muted: #a9b3c7;
+  --line: rgba(211, 162, 74, .28);
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--navy); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--navy); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: 1.02; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.section { position: relative; padding-block: clamp(64px, 9vw, 112px); overflow: hidden; }
+.section h2 { font-size: clamp(2.3rem, 5vw, 3.6rem); }
+.sec-head { display: grid; gap: 12px; margin-bottom: clamp(32px, 5vw, 52px); max-width: 640px; }
+.sec-head p { color: var(--muted); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+.btn-ghost { border: 1.5px solid var(--line); color: var(--text); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Header */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(20, 30, 51, .92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(211, 162, 74, .14); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand img { width: 52px; height: auto; flex: none; }
+.brand-text { display: grid; line-height: 1.05; min-width: 0; }
+.brand-text strong { font-family: var(--display); font-size: 1.25rem; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.brand-text span { font-size: .6rem; letter-spacing: .14em; color: var(--gold); text-transform: uppercase; font-weight: 600; }
+.menu { display: flex; align-items: center; gap: 26px; list-style: none; margin: 0; padding: 0; }
+.menu a { text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--muted); transition: color .2s; }
+.menu a:hover { color: var(--gold); }
+.menu .btn { color: var(--ink); padding: 10px 18px; }
+.burger { display: none; background: none; border: 1.5px solid var(--line); color: var(--text); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; font-size: 1.2rem; }
+
+/* Hero */
+.hero { padding-block: clamp(56px, 8vw, 104px) clamp(64px, 9vw, 120px); }
+.hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(3rem, 8vw, 6.2rem); margin: 18px 0 22px; }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero-lead { font-size: clamp(1.02rem, 1.6vw, 1.15rem); color: var(--muted); max-width: 54ch; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-logo { justify-self: center; width: min(100%, 360px); filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+.bars { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bars i { position: absolute; display: block; background: var(--gold); border-radius: 18px; transform: rotate(-45deg); opacity: .95; }
+.bars i:nth-child(1) { width: 520px; height: 70px; right: -150px; top: 22%; }
+.bars i:nth-child(2) { width: 300px; height: 70px; right: -60px; bottom: 6%; }
+.bars i:nth-child(3) { width: 180px; height: 40px; left: -70px; bottom: 10%; opacity: .5; }
+.facts { position: relative; z-index: 2; margin-top: clamp(48px, 7vw, 80px); display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.fact { padding: 22px 20px 0 0; display: grid; gap: 4px; }
+.fact b { font-family: var(--display); font-size: clamp(1.8rem, 3.4vw, 2.5rem); color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: .85rem; color: var(--muted); }
+
+/* Tentang */
+.about { background: var(--navy-2); }
+.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 72px); align-items: start; }
+.about-copy { display: grid; gap: 18px; color: var(--muted); max-width: 62ch; }
+.about-copy strong { color: var(--text); }
+.history { margin-top: 10px; padding: 22px 24px; border-left: 3px solid var(--gold); background: rgba(255,255,255,.03); border-radius: 0 14px 14px 0; display: grid; gap: 6px; }
+.history h3 { font-size: 1.4rem; color: var(--text); }
+.founder { background: var(--navy-3); border-radius: 22px; overflow: hidden; border: 1px solid rgba(211,162,74,.18); }
+.founder-photo { aspect-ratio: 4 / 4.2; max-width: 100%; background: #c9c9c9; overflow: hidden; }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+.founder-body { padding: 24px; display: grid; gap: 14px; }
+.founder-body h3 { font-size: 1.9rem; }
+.founder-body .role { color: var(--gold); font-size: .85rem; font-weight: 600; margin-top: -8px; }
+.creds { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: .9rem; color: var(--muted); }
+.creds li { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: baseline; }
+.creds abbr { text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--gold); letter-spacing: .04em; }
+
+/* Visi Misi */
+.vm-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; }
+.panel { background: var(--navy-2); border: 1px solid rgba(211,162,74,.16); border-radius: 22px; padding: clamp(26px, 4vw, 40px); display: grid; gap: 16px; align-content: start; }
+.panel h3 { font-size: 2rem; color: var(--gold); }
+.panel .quote { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.5; font-weight: 500; }
+.mission { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: m; }
+.mission li { counter-increment: m; display: grid; grid-template-columns: 40px 1fr; gap: 12px; color: var(--muted); }
+.mission li::before { content: counter(m); font-family: var(--display); font-weight: 800; font-size: 1.1rem; color: var(--ink); background: var(--gold); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; }
+
+/* Layanan */
+.services { background: var(--ivory); color: var(--ink); }
+.services .sec-head p { color: #4a5568; }
+.services .eyebrow { color: #a87a26; }
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.svc { background: #fff; border: 1px solid #e7dcc4; border-radius: 18px; padding: 24px; display: grid; gap: 10px; align-content: start; transition: transform .2s, box-shadow .2s; }
+.svc:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(20,30,51,.1); }
+.svc-ico { width: 46px; height: 46px; border-radius: 12px; background: var(--navy); display: grid; place-items: center; }
+.svc-ico svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.svc h3 { font-family: var(--body); text-transform: none; font-size: 1.05rem; font-weight: 700; line-height: 1.35; letter-spacing: 0; }
+.svc p { font-size: .9rem; color: #4a5568; }
+.svc-cta { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; color: #4a5568; }
+.svc-cta .btn-gold { background: var(--navy); color: #fff; }
+.svc-cta .btn-gold:hover { background: var(--navy-3); }
+
+/* Kenapa Kami */
+.why-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 72px); align-items: start; }
+.perks { display: grid; gap: 14px; }
+.perk { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: center; padding: 18px 20px; background: var(--navy-2); border-radius: 16px; border: 1px solid rgba(211,162,74,.16); }
+.perk-ico { width: 52px; height: 52px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; }
+.perk-ico svg { width: 26px; height: 26px; stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.perk b { font-size: 1.05rem; }
+.why-copy { display: grid; gap: 18px; color: var(--muted); font-size: 1.04rem; }
+.why-copy p:first-child { color: var(--text); font-size: 1.2rem; font-weight: 500; }
+
+/* Ulasan */
+.reviews { background: var(--navy-2); }
+.rev-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+.score { display: flex; gap: 28px; }
+.score div { display: grid; }
+.score b { font-family: var(--display); font-size: 3rem; line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
+.score span { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
+.rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.rev { background: var(--navy); border-radius: 20px; padding: 26px; display: grid; gap: 16px; grid-template-rows: auto 1fr auto; border: 1px solid rgba(211,162,74,.14); }
+.stars { color: var(--gold); letter-spacing: 3px; font-size: 1rem; }
+.stars small { color: var(--muted); letter-spacing: 0; margin-left: 6px; font-size: .85rem; }
+.rev blockquote { margin: 0; font-size: 1.08rem; line-height: 1.55; }
+.rev footer { display: flex; justify-content: space-between; gap: 12px; font-size: .82rem; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); padding-top: 14px; }
+.rev footer b { color: var(--text); font-weight: 600; }
+
+/* Kontak */
+.contact { padding-block: clamp(64px, 9vw, 104px); }
+.contact-box { position: relative; overflow: hidden; background: var(--gold); color: var(--ink); border-radius: 28px; padding: clamp(32px, 6vw, 64px); display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; }
+.contact-box h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.contact-box p { margin-top: 14px; max-width: 46ch; font-weight: 500; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; position: relative; z-index: 1; }
+.contact-list li { background: var(--navy); color: var(--text); border-radius: 14px; padding: 14px 18px; display: grid; gap: 2px; min-width: 0; }
+.contact-list span { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.contact-list a, .contact-list em { font-style: normal; font-weight: 600; overflow-wrap: anywhere; text-decoration: none; }
+.contact-list em { color: var(--muted); font-weight: 500; }
+.wa-btn { margin-top: 24px; background: var(--navy); color: #fff; position: relative; z-index: 1; }
+.wa-btn:hover { background: var(--navy-3); transform: translateY(-2px); }
+.contact-box::after { content: ""; position: absolute; width: 360px; height: 60px; background: rgba(20,30,51,.12); border-radius: 18px; transform: rotate(-45deg); right: -80px; top: 20px; }
+
+.foot { border-top: 1px solid rgba(211,162,74,.16); padding-block: 32px; font-size: .85rem; color: var(--muted); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero .wrap, .about-grid, .vm-grid, .why-grid, .contact-box { grid-template-columns: 1fr; }
+  .hero-logo { display: none; }
+  .svc-grid, .rev-grid { grid-template-columns: 1fr 1fr; }
+  .facts { grid-template-columns: 1fr 1fr; row-gap: 8px; }
+  .founder { max-width: 460px; }
+  .burger { display: grid; place-items: center; }
+  .menu { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--navy); border-bottom: 1px solid var(--line); padding: 8px max(20px, env(safe-area-inset-right, 0px)) 18px max(20px, env(safe-area-inset-left, 0px)); }
+  .menu[data-open="false"] { display: none; }
+  .menu a { display: block; padding: 12px 0; font-size: 1rem; }
+  .menu .btn { justify-content: center; margin-top: 8px; padding: 14px; }
+}
+@media (max-width: 620px) {
+  .svc-grid, .rev-grid { grid-template-columns: 1fr; }
+  .bars i:nth-child(1) { width: 300px; height: 44px; right: -140px; top: 8%; }
+  .bars i:nth-child(2) { width: 200px; height: 44px; right: -70px; bottom: 4%; }
+  .brand-text strong { font-size: 1.05rem; }
+  .brand-text span { display: none; }
+  .brand img { width: 44px; }
+}
+</style>
+
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#beranda" aria-label="Naraya Artha Consulting, ke beranda">
+      <img src="assets/monogram-nac.png" alt="Logo NAC" width="181" height="116">
+      <span class="brand-text"><strong>Naraya Artha Consulting</strong><span>Smart Tax Solutions</span></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <ul class="menu" id="menu" data-open="false">
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#kenapa">Kenapa Kami</a></li>
+      <li><a href="#ulasan">Ulasan</a></li>
+      <li><a class="btn btn-gold" href="#kontak">Konsultasi Sekarang</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="section hero" id="beranda">
+    <div class="bars" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">PT. Naraya Artha Consulting</span>
+        <h1>Smart Tax Solutions for <em>Growing Businesses</em></h1>
+        <p class="hero-lead">Konsultan pajak dan jasa akuntansi untuk orang pribadi, UMKM, dan badan usaha. Kami bantu urusan pajak Anda tetap akurat, patuh, dan tepat waktu, supaya Anda bisa fokus membesarkan bisnis.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="https://wa.me/6282124585848?text=Halo%20Naraya%20Artha%20Consulting%2C%20saya%20ingin%20konsultasi%20pajak." target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+          <a class="btn btn-ghost" href="#layanan">Lihat Layanan</a>
+        </div>
+      </div>
+      <img class="hero-logo" src="assets/logo-nac.png" alt="Logo Naraya Artha Consulting" width="253" height="181">
+    </div>
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact"><b>4.9★</b><span>Rating klien di Fiverr</span></div>
+        <div class="fact"><b>9</b><span>Layanan pajak &amp; akuntansi</span></div>
+        <div class="fact"><b>IKPI</b><span>Anggota Ikatan Konsultan Pajak Indonesia</span></div>
+        <div class="fact"><b>2026</b><span>Resmi berbadan hukum PT, 15 Mei</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="tentang">
+    <div class="wrap about-grid">
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">Tentang Kami</span>
+          <h2>Partner pajak yang tumbuh bersama klien</h2>
+        </div>
+        <div class="about-copy">
+          <p><strong>PT. Naraya Artha Consulting</strong> adalah perusahaan konsultan pajak dan jasa pelayanan akuntansi yang resmi berdiri sebagai badan usaha pada 15 Mei 2026, setelah sebelumnya berpengalaman melayani klien secara profesional sebagai praktik orang pribadi.</p>
+          <p>Kami menyediakan konsultasi perpajakan serta penyusunan laporan keuangan dengan pendekatan yang profesional, responsif, dan berorientasi pada solusi. Dengan fokus pada akurasi, kepatuhan, dan kualitas layanan, kami berkomitmen menjadi partner terpercaya bagi individu maupun bisnis.</p>
+          <div class="history">
+            <span class="eyebrow">Sejarah Berdiri</span>
+            <h3>Berawal dari “Nursaid Consulting”</h3>
+            <p>Kami memulai sebagai praktik orang pribadi dengan nama Nursaid Consulting dan melayani klien melalui platform Fiverr, sebelum resmi menjadi PT. Naraya Artha Consulting.</p>
+          </div>
+        </div>
+      </div>
+      <article class="founder">
+        <div class="founder-photo"><img src="assets/pendiri.jpg" alt="Naufal Nursaid, pendiri Naraya Artha Consulting" width="333" height="500"></div>
+        <div class="founder-body">
+          <span class="eyebrow">Pendiri</span>
+          <h3>Naufal Nursaid</h3>
+          <p class="role">Konsultan Pajak Berizin</p>
+          <ul class="creds">
+            <li><abbr title="Ikatan Konsultan Pajak Indonesia">IKPI</abbr><span>Anggota Ikatan Konsultan Pajak Indonesia, memiliki izin praktik konsultan pajak</span></li>
+            <li><abbr title="Asosiasi Teknisi Pajak Indonesia">ATPI</abbr><span>Sertifikasi Profesi Teknisi Pajak Indonesia</span></li>
+            <li><abbr title="Badan Nasional Sertifikasi Profesi">BNSP</abbr><span>Sertifikasi Profesi Akuntansi</span></li>
+          </ul>
+          <p style="font-size:.9rem;color:var(--muted)">Berpengalaman bekerja di kantor konsultan pajak di Jakarta.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="visi-misi">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Visi &amp; Misi</span>
+        <h2>Arah kami melayani</h2>
+      </div>
+      <div class="vm-grid">
+        <div class="panel">
+          <h3>Visi</h3>
+          <p class="quote">Menjadi partner terpercaya di bidang perpajakan dan akuntansi yang memberikan solusi profesional, akurat, dan berorientasi pada perkembangan bisnis klien.</p>
+        </div>
+        <div class="panel">
+          <h3>Misi</h3>
+          <ol class="mission">
+            <li>Menyediakan layanan konsultasi yang profesional dan bernilai tambah.</li>
+            <li>Menjaga standar akurasi dan kepatuhan dalam setiap layanan.</li>
+            <li>Mendukung pertumbuhan bisnis klien melalui solusi yang efektif dan terpercaya.</li>
+            <li>Mengedepankan integritas dan hubungan profesional jangka panjang.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="layanan">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Ruang Lingkup Jasa</span>
+        <h2>Layanan kami</h2>
+        <p>Dari mendirikan usaha sampai menghadapi pemeriksaan pajak, semua bisa ditangani dalam satu tempat.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Pembuatan Badan Usaha</h3><p>Akta perusahaan, NIB, dan NPWP badan.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></svg></div><h3>Pembuatan Legalitas Usaha</h3><p>Perizinan dan dokumen legal agar usaha berjalan resmi.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M8 10h.01M12 10h4"/></svg></div><h3>Akun Coretax</h3><p>Pembuatan dan pengurusan akun Coretax DJP.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Pelaporan Pajak Bulanan</h3><p>Perhitungan, penyetoran, dan pelaporan SPT Masa.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>SPT Tahunan</h3><p>Pelaporan tahunan pajak badan usaha dan orang pribadi.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Pemeriksaan Pajak &amp; SP2DK</h3><p>Pendampingan saat pemeriksaan dan menjawab SP2DK.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg></div><h3>Transfer Pricing Document</h3><p>Penyusunan dokumen penentuan harga transfer.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Pelaporan LKPM di OSS</h3><p>Laporan Kegiatan Penanaman Modal secara berkala.</p></div>
+        <div class="svc"><div class="svc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div><h3>Jasa Akuntansi Lainnya</h3><p>Penyusunan laporan keuangan dan kebutuhan akuntansi pajak lain.</p></div>
+      </div>
+      <div class="svc-cta">
+        <a class="btn btn-gold" href="https://wa.me/6282124585848?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Naraya%20Artha%20Consulting." target="_blank" rel="noopener">Tanyakan layanan via WhatsApp</a>
+        <span>Konsultasi awal bisa lewat WhatsApp.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kenapa">
+    <div class="wrap why-grid">
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">Kenapa Kami</span>
+          <h2>Kelebihan kami</h2>
+        </div>
+        <div class="perks">
+          <div class="perk"><div class="perk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></div><b>Terdaftar sebagai konsultan pajak</b></div>
+          <div class="perk"><div class="perk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg></div><b>Proses pengerjaan cepat</b></div>
+          <div class="perk"><div class="perk-ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><b>Menjamin privasi Anda</b></div>
+        </div>
+      </div>
+      <div class="why-copy">
+        <p>Kami adalah konsultan pajak tersertifikasi yang memiliki keahlian dan pengalaman di bidangnya.</p>
+        <p>Kami telah membantu banyak orang pribadi dan UMKM yang ingin membesarkan bisnisnya tanpa khawatir akan masalah perpajakan di kemudian hari.</p>
+        <p>Kami memberikan perencanaan yang matang dan beberapa pilihan kepada pengusaha, lengkap dengan pertimbangan sebab dan akibatnya ke depan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="ulasan">
+    <div class="wrap">
+      <div class="rev-top">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Ulasan Klien</span>
+          <h2>Kata mereka di Fiverr</h2>
+        </div>
+        <div class="score">
+          <div><b>4.9</b><span>Rating</span></div>
+          <div><b>86%</b><span>Response rate</span></div>
+        </div>
+      </div>
+      <div class="rev-grid">
+        <figure class="rev" style="margin:0">
+          <div class="stars">★★★★★<small>5.0</small></div>
+          <blockquote>“Mantap gan, cepat sekali.”</blockquote>
+          <footer><b>sabtuminggu</b><span>Pengerjaan 2 hari</span></footer>
+        </figure>
+        <figure class="rev" style="margin:0">
+          <div class="stars">★★★★★<small>4.7</small></div>
+          <blockquote>“It's a pleasure working with Naufal, as he's highly informative and responsive to my inquiries.”</blockquote>
+          <footer><b>wiralika</b><span>Pengerjaan 12 hari</span></footer>
+        </figure>
+        <figure class="rev" style="margin:0">
+          <div class="stars">★★★★★<small>5.0</small></div>
+          <blockquote>“Love the work.”</blockquote>
+          <footer><b>dennistjahyadi</b><span>Pengerjaan 2 minggu</span></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Siap merapikan urusan pajak Anda?</h2>
+          <p>Ceritakan kebutuhan Anda, kami bantu carikan solusi yang tepat, aman, dan sesuai aturan.</p>
+          <a class="btn wa-btn" href="https://wa.me/6282124585848?text=Halo%20Naraya%20Artha%20Consulting%2C%20saya%20ingin%20konsultasi%20pajak." target="_blank" rel="noopener">Chat WhatsApp Sekarang</a>
+        </div>
+        <ul class="contact-list">
+          <li><span>WhatsApp</span><a href="https://wa.me/6282124585848" target="_blank" rel="noopener">0821-2458-5848</a></li>
+          <li><span>Email</span><a href="mailto:narayaarthaconsulting@gmail.com">narayaarthaconsulting@gmail.com</a></li>
+          <li><span>Website</span><a href="https://www.narayaarthaconsulting.com" target="_blank" rel="noopener">www.narayaarthaconsulting.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 PT. Naraya Artha Consulting</span>
+    <span>Smart Tax Solutions for Growing Businesses</span>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  function setMenu(open) {
+    menu.dataset.open = String(open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.textContent = open ? '✕' : '☰';
+  }
+  burger.addEventListener('click', () => setMenu(menu.dataset.open !== 'true'));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+</script>
+
+</body>
+</html>
